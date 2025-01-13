@@ -4,23 +4,31 @@ from scipy.integrate import odeint
 
 class Kuramoto:
 
-    def __init__(self, coupling=1, dt=0.01, T=10, n_nodes=None, natfreqs=None):
+    def __init__(
+        self,
+        coupling=1,
+        dt=0.01,
+        T=10,
+        n_nodes=None,
+        natfreqs=None
+    ):
         '''
         coupling: float
-            Coupling strength. Default = 1. Typical values range between 0.4-2
+            Coupling strength. Default = 1.
+            Typical values range between 0.4-2
         dt: float
             Delta t for integration of equations.
         T: float
             Total time of simulated activity.
-            From that the number of integration steps is T/dt.
+            Number of integration steps is int( T/dt ).
         n_nodes: int, optional
             Number of oscillators.
             If None, it is inferred from len of natfreqs.
             Must be specified if natfreqs is not given.
         natfreqs: 1D ndarray, optional
             Natural oscillation frequencies.
-            If None, then new random values will be generated and kept fixed
-            for the object instance.
+            If None, then new random values will be generated 
+                and kept fixed for the object instance.
             Must be specified if n_nodes is not given.
             If given, it overrides the n_nodes argument.
         '''
