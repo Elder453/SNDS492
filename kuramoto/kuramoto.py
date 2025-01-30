@@ -126,4 +126,3 @@ class Kuramoto:
         # Average across complete time window - mean angular velocity (freq.)
         meanfreq = integral / self.T
         return meanfreq
-
